@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "./App.scss";
+import routes, { renderRoutes } from "./routes";
+import { fetchUser } from "./slices/userSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  const { user } = useSelector((store) => store.user);
+
+  // useEffect(() => {
+  //   if(user){
+  //   dispatch(fetchUser())
+  //   }
+
+  // }, [user]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+      <ToastContainer
+        theme="colored"
+        // autoClose={5000}
+        // hideProgressBar={false}
+        // newestOnTop={false}
+        // closeOnClick
+        // rtl={false}
+        // pauseOnFocusLoss
+        draggable
+        // pauseOnHover
+      />
     </div>
   );
 }

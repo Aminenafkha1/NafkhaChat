@@ -1,0 +1,58 @@
+// File: App.scss
+// This file contains all styles related to the site/application.
+@import "./assets/scss/fonts";
+@import "./assets/scss/mixins";
+@import "./assets/scss/variables";
+@import "./assets/scss/functions";
+/* ---------------Layouts-------------------- */
+// @import "./layouts/MainLayout/mainlayout.scss";
+
+
+/* ---------------Pages-------------------- */
+// @import "./pages/QuizzesList/index.scss";
+
+
+/* ---------------Components-------------------- */
+// @import "./components/Carousel/carousel.scss";
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background: $backgroundColor;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-width: 4px;
+  scrollbar-color: $primaryColor #e5edf7;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+  z-index: 120;
+}
+
+// *::-webkit-scrollbar-track {
+//   background: #e5edf7;
+// }
+
+*::-webkit-scrollbar-thumb {
+  background-color: $primaryColor;
+  border-radius: 0;
+  border: 0px solid #e5edf7;
+}
